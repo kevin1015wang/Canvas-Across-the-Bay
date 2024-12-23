@@ -8,6 +8,9 @@ import { bartDalyWestOakland } from "../data/bartDalyWestOakland.js";
 import { bartWestOakBayFair } from "../data/bartWestOakBayFair.js";
 import { bartBlueLineExt } from "../data/bartBlueLineExt.js";
 import { bartGreenOrangeLineExt } from "../data/bartGreenOrangeLineExt.js";
+import { bartOrangeOakland } from "../data/bartOrangeOakland.js";
+import { bartOrangeLakeBay } from "../data/bartOrangeLakeBay.js";
+import { bartOrangeLakeTwelve } from "../data/bartOrangeLakeTwelve.js";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -45,6 +48,53 @@ const MapLayer = () => {
         });
     };
 
+    const computeParallelLineIgnoreLast = (line, offset) => {
+        const toRad = (degrees) => (degrees * Math.PI) / 180;
+        const toDeg = (radians) => (radians * 180) / Math.PI;
+        const earthRadius = 6378137; // Radius of Earth in meters
+    
+        return line.map(([lat, lng], i, arr) => {
+            if (i === 0 || i === arr.length - 1) {
+                // No offset for the first or last point
+                return [lat, lng];
+            }
+            const [prevLat, prevLng] = arr[i - 1];
+    
+            const dLat = toRad(lat - prevLat);
+            const dLng = toRad(lng - prevLng);
+    
+            const angle = Math.atan2(dLat, dLng) + Math.PI / 2; // Perpendicular angle
+            const offsetLat = (offset * Math.cos(angle)) / earthRadius * (180 / Math.PI);
+            const offsetLng = (offset * Math.sin(angle)) / (earthRadius * Math.cos(toRad(lat))) * (180 / Math.PI);
+    
+            return [lat + offsetLat, lng + offsetLng];
+        });
+    };
+
+    const computeParallelLineIgnoreFirst = (line, offset) => {
+        const toRad = (degrees) => (degrees * Math.PI) / 180;
+        const toDeg = (radians) => (radians * 180) / Math.PI;
+        const earthRadius = 6378137; // Radius of Earth in meters
+
+        return line.map(([lat, lng], i, arr) => {
+            if (i === 0) {
+                // No offset for the first point
+                return [lat, lng];
+            }
+            const [prevLat, prevLng] = arr[i - 1];
+
+            const dLat = toRad(lat - prevLat);
+            const dLng = toRad(lng - prevLng);
+
+            const angle = Math.atan2(dLat, dLng) + Math.PI / 2; // Perpendicular angle
+            const offsetLat = (offset * Math.cos(angle)) / earthRadius * (180 / Math.PI);
+            const offsetLng = (offset * Math.sin(angle)) / (earthRadius * Math.cos(toRad(lat))) * (180 / Math.PI);
+
+            return [lat + offsetLat, lng + offsetLng];
+        }
+        );
+    };
+    
     const bartYellowLine = computeParallelLine(bartRedYellowLine, 25); 
 
     // compute parallel line from Daly City to West Oakland for blue line
@@ -53,6 +103,8 @@ const MapLayer = () => {
     const bartGreenWestOakBayFair = computeParallelLine(bartWestOakBayFair, 25);
     const bartOrangeLineExt = computeParallelLine(bartGreenOrangeLineExt, 25);
     const bartOrangeNorthExt = computeParallelLine(bartRedLineExt, 50);
+    const bartOrangeOaklandLine = computeParallelLineIgnoreLast(bartOrangeOakland, 50);
+    const bartOrangeLakeBayLine = computeParallelLineIgnoreLast(bartOrangeLakeBay, 50);
     
     return (
         <MapContainer
@@ -78,6 +130,9 @@ const MapLayer = () => {
             <Polyline pathOptions={greenOptions} positions={bartGreenOrangeLineExt} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLineExt} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeNorthExt} />
+            <Polyline pathOptions={orangeOptions} positions={bartOrangeOaklandLine} />
+            <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeBayLine} />
+            <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeTwelve} />
         </MapContainer>
     );
 };

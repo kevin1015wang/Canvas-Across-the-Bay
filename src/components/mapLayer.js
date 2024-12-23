@@ -7,6 +7,7 @@ import { bartYellowLineExt } from "../data/bartYellowLineExt.js";
 import { bartDalyWestOakland } from "../data/bartDalyWestOakland.js";
 import { bartWestOakBayFair } from "../data/bartWestOakBayFair.js";
 import { bartBlueLineExt } from "../data/bartBlueLineExt.js";
+import { bartGreenOrangeLineExt } from "../data/bartGreenOrangeLineExt.js";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -18,6 +19,7 @@ const MapLayer = () => {
     const yellowOptions = { color: "yellow" };
     const blueOptions = { color: "lightblue" };
     const greenOptions = { color: "green" };
+    const orangeOptions = { color: "orange" };
 
     // Get Access Token from .env
     const accessToken = process.env.REACT_APP_ACCESS_TOKEN;
@@ -49,7 +51,9 @@ const MapLayer = () => {
     const bartBlueDalytoWOak = computeParallelLine(bartDalyWestOakland, 50);
     const bartGreenDalytoWOak = computeParallelLine(bartDalyWestOakland, 75);
     const bartGreenWestOakBayFair = computeParallelLine(bartWestOakBayFair, 25);
-
+    const bartOrangeLineExt = computeParallelLine(bartGreenOrangeLineExt, 25);
+    const bartOrangeNorthExt = computeParallelLine(bartRedLineExt, 50);
+    
     return (
         <MapContainer
             center={[latitude, longitude]}
@@ -71,6 +75,9 @@ const MapLayer = () => {
             <Polyline pathOptions={blueOptions} positions={bartWestOakBayFair} />
             <Polyline pathOptions={greenOptions} positions={bartGreenWestOakBayFair} />
             <Polyline pathOptions={blueOptions} positions={bartBlueLineExt} />
+            <Polyline pathOptions={greenOptions} positions={bartGreenOrangeLineExt} />
+            <Polyline pathOptions={orangeOptions} positions={bartOrangeLineExt} />
+            <Polyline pathOptions={orangeOptions} positions={bartOrangeNorthExt} />
         </MapContainer>
     );
 };

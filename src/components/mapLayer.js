@@ -4,6 +4,9 @@ import "leaflet/dist/leaflet.css";
 import { bartRedYellowLine } from "../data/bartRedYellowLine.js";
 import { bartRedLineExt } from "../data/bartRedLineExt.js";
 import { bartYellowLineExt } from "../data/bartYellowLineExt.js";
+import { bartDalyWestOakland } from "../data/bartDalyWestOakland.js";
+import { bartWestOakBayFair } from "../data/bartWestOakBayFair.js";
+import { bartBlueLineExt } from "../data/bartBlueLineExt.js";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -13,6 +16,8 @@ const MapLayer = () => {
     // BART Red Line Coords
     const redOptions = { color: "red" };
     const yellowOptions = { color: "yellow" };
+    const blueOptions = { color: "lightblue" };
+    const greenOptions = { color: "green" };
 
     // Get Access Token from .env
     const accessToken = process.env.REACT_APP_ACCESS_TOKEN;
@@ -40,6 +45,11 @@ const MapLayer = () => {
 
     const bartYellowLine = computeParallelLine(bartRedYellowLine, 25); 
 
+    // compute parallel line from Daly City to West Oakland for blue line
+    const bartBlueDalytoWOak = computeParallelLine(bartDalyWestOakland, 50);
+    const bartGreenDalytoWOak = computeParallelLine(bartDalyWestOakland, 75);
+    const bartGreenWestOakBayFair = computeParallelLine(bartWestOakBayFair, 25);
+
     return (
         <MapContainer
             center={[latitude, longitude]}
@@ -56,6 +66,11 @@ const MapLayer = () => {
             <Polyline pathOptions={redOptions} positions={bartRedLineExt} />
             <Polyline pathOptions={yellowOptions} positions={bartYellowLine} />
             <Polyline pathOptions={yellowOptions} positions={bartYellowLineExt} />
+            <Polyline pathOptions={blueOptions} positions={bartBlueDalytoWOak} />
+            <Polyline pathOptions={greenOptions} positions={bartGreenDalytoWOak} />
+            <Polyline pathOptions={blueOptions} positions={bartWestOakBayFair} />
+            <Polyline pathOptions={greenOptions} positions={bartGreenWestOakBayFair} />
+            <Polyline pathOptions={blueOptions} positions={bartBlueLineExt} />
         </MapContainer>
     );
 };

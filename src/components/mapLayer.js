@@ -14,6 +14,9 @@ const MapLayer = () => {
     const redOptions = { color: "red" };
     const yellowOptions = { color: "yellow" };
 
+    // Get Access Token from .env
+    const accessToken = process.env.REACT_APP_ACCESS_TOKEN;
+
     // Function to compute a parallel line with a small offset
     const computeParallelLine = (line, offset) => {
         const toRad = (degrees) => (degrees * Math.PI) / 180;
@@ -47,7 +50,7 @@ const MapLayer = () => {
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> contributors'
-                url={`https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2V2aW4xMDE1d2FuZyIsImEiOiJjbTR4b2tqeHIwc3R2Mm5vcGxlcm1kaGRsIn0.KvbQQrarGCXNcJf4CqVXHA`}
+                url={`https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/{z}/{x}/{y}@2x?access_token=${accessToken}`}
             />
             <Polyline pathOptions={redOptions} positions={bartRedYellowLine} />
             <Polyline pathOptions={redOptions} positions={bartRedLineExt} />

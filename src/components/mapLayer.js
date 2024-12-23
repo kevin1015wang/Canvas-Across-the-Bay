@@ -11,6 +11,7 @@ import { bartGreenOrangeLineExt } from "../data/bartGreenOrangeLineExt.js";
 import { bartOrangeOakland } from "../data/bartOrangeOakland.js";
 import { bartOrangeLakeBay } from "../data/bartOrangeLakeBay.js";
 import { bartOrangeLakeTwelve } from "../data/bartOrangeLakeTwelve.js";
+import { bartOAKAirport } from "../data/bartOAKAirport.js";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -23,6 +24,7 @@ const MapLayer = () => {
     const blueOptions = { color: "lightblue" };
     const greenOptions = { color: "green" };
     const orangeOptions = { color: "orange" };
+    const beigeOptions = { color: "beige" };
 
     // Get Access Token from .env
     const accessToken = process.env.REACT_APP_ACCESS_TOKEN;
@@ -133,6 +135,7 @@ const MapLayer = () => {
             <Polyline pathOptions={orangeOptions} positions={bartOrangeOaklandLine} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeBayLine} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeTwelve} />
+            <Polyline pathOptions={beigeOptions} positions={bartOAKAirport} />
         </MapContainer>
     );
 };

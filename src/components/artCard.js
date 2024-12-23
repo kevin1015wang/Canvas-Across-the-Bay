@@ -4,21 +4,23 @@ import PersonIcon from '@mui/icons-material/Person';
 import TrainIcon from '@mui/icons-material/Train';
 import LocationIcon from '@mui/icons-material/LocationOn';
 
-export default function ArtCard({ 
-    image, 
-    title, 
-    author, 
-    station, 
-    location 
+export default function ArtCard({
+    image,
+    title,
+    author,
+    station,
+    location
 }) {
     return (
         <Card sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-            <Box sx={{ width: '200px', paddingLeft: '10px' }}>
+            <Box sx={{ width: '200px', height: '130px', paddingLeft: '10px', overflow: 'hidden', flexShrink: 0 }}>
                 <CardMedia
                     component="img"
                     sx={{
+                        width: '200px',
+                        height: '130px',
                         objectFit: 'cover',
-                        borderRadius: '24px',
+                        borderRadius: '10px',
                     }}
                     image={image}
                     alt="Art Image"
@@ -26,25 +28,25 @@ export default function ArtCard({
             </Box>
 
             <CardContent>
-                <Typography gutterBottom variant="h6" component="div">
-                    {title}
+                <Typography gutterBottom variant="h7" component="div">
+                    <strong>{title}</strong>
                 </Typography>
-                <Typography 
-                    variant="body2" 
+                <Typography
+                    variant="body2"
                     sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary', paddingBottom: '5px' }}
                 >
                     <PersonIcon sx={{ mr: 1 }} />
                     {author}
                 </Typography>
-                <Typography 
-                    variant="body2" 
+                <Typography
+                    variant="body2"
                     sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary', paddingBottom: '5px' }}
                 >
                     <TrainIcon sx={{ mr: 1 }} />
                     {station}
                 </Typography>
-                <Typography 
-                    variant="body2" 
+                <Typography
+                    variant="body2"
                     sx={{ display: 'flex', alignItems: 'center', color: 'text.secondary' }}
                 >
                     <LocationIcon sx={{ mr: 1 }} />

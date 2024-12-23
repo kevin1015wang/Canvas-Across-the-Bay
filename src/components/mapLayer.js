@@ -3,6 +3,7 @@ import { MapContainer, Polyline, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { bartRedYellowLine } from "../data/bartRedYellowLine.js";
 import { bartRedLineExt } from "../data/bartRedLineExt.js";
+import { bartYellowLineExt } from "../data/bartYellowLineExt.js";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -51,6 +52,7 @@ const MapLayer = () => {
             <Polyline pathOptions={redOptions} positions={bartRedYellowLine} />
             <Polyline pathOptions={redOptions} positions={bartRedLineExt} />
             <Polyline pathOptions={yellowOptions} positions={bartYellowLine} />
+            <Polyline pathOptions={yellowOptions} positions={bartYellowLineExt} />
         </MapContainer>
     );
 };

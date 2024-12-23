@@ -23,7 +23,7 @@ function App() {
       {/* Card */}
       <Card
         sx={{
-          maxWidth: 345,
+          maxWidth: 450,
           position: 'absolute',
           top: '20px',
           left: '20px',
@@ -33,7 +33,7 @@ function App() {
       >
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Canvas Across the Bay
+            <strong>Canvas Across the Bay</strong>
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             Oftentimes, the subway/metro stations in the Bay are a sensory overload. There's a caterwauling of noises, a blur of visual spectacles, and occasionally <em>suspicious</em> smells. Within this dance that millions of Bay Area commuters two step in everyday, there are hidden moments of free (well $2.90 really) art that twirls around us. We pass by so much art every day without even realizing it. How many of these have you encountered on your commutes before? Click on an image to read their description page and learn more!

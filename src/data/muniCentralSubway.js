@@ -1,0 +1,9 @@
+export const muniCentralSubway = [
+    [37.794798495919885, -122.40808097837603], // MUNI Chinatown - Rose Pak Station
+    [37.78716715227835, -122.4065251938969], // MUNI Union Square - Market St Station
+    [37.78580463786893, -122.40625331997487],
+    [37.78573810085646, -122.40582202697023],
+    [37.7823736239654, -122.40158234091055], // MUNI Yerba Buena - Moscone Station
+    [37.77887415754383, -122.39728016240858], // MUNI 4th & Brannan Station
+    [37.77612128847838, -122.39388492758128], // MUNI 4th & King Station
+];

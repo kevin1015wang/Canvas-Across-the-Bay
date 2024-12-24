@@ -16,18 +16,20 @@ import Divider from '@mui/material/Divider';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { bartStations } from './data/bartStations';
+import { muniStations } from './data/muniStations';
+import { muniArtData } from './data/muniArtData';
 
 const center = [51.505, -0.09];
 
 const App = () => {
   const [selectedStation, setSelectedStation] = useState('All stations');
 
-  const stationOptions = ['All stations', ...new Set(bartStations.map((station) => station.station))];
+  const stationOptions = ['All stations', ...new Set([...bartStations.map((station) => station.station), ...muniStations.map((station) => station.station)])];
 
   const filteredArtData =
     selectedStation === 'All stations'
-      ? bartArtData
-      : bartArtData.filter((art) => art.stationLocation === selectedStation);
+      ? [...bartArtData, ...muniArtData]
+      : [...bartArtData, ...muniArtData].filter((art) => art.stationLocation === selectedStation);
 
   const handleStationClick = (stationName) => {
     setSelectedStation(stationName);

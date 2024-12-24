@@ -15,6 +15,8 @@ import { bartOAKAirport } from "../data/bartOAKAirport.js";
 import { bartStations } from "../data/bartStations.js";
 import { CircleMarker } from "react-leaflet";
 import { Popup } from "react-leaflet";
+import { muniCentralSubway } from "../data/muniCentralSubway.js";
+import { muniStations } from "../data/muniStations.js";
 
 const MapLayer = ({ onStationClick }) => {
     const mapRef = useRef(null);
@@ -139,8 +141,29 @@ const MapLayer = ({ onStationClick }) => {
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeBayLine} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeTwelve} />
             <Polyline pathOptions={beigeOptions} positions={bartOAKAirport} />
+            <Polyline pathOptions={redOptions} positions={muniCentralSubway} />
 
             {bartStations.map((station, index) => (
+                <CircleMarker
+                    key={index}
+                    center={[station.lat, station.lng]}
+                    pathOptions={{
+                        color: station.artPresent ? "white" : "black",
+                        fillColor: station.artPresent ? "white" : "black",
+                        fillOpacity: 0.8,
+                    }}
+                    radius={5}
+                    eventHandlers={{
+                        click: () => {
+                            onStationClick(station.station);
+                        },
+                    }}
+                >
+                    <Popup className="custom-popup"><strong>{station.station}</strong></Popup>
+                </CircleMarker>
+            ))}
+
+            {muniStations.map((station, index) => (
                 <CircleMarker
                     key={index}
                     center={[station.lat, station.lng]}

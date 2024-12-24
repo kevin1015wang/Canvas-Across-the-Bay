@@ -67,7 +67,10 @@ const App = () => {
           <Divider />
         </div>
 
-        <div style={{ padding: '16px' }}>
+        <div style={{ padding: '16px', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap'}}>
+          <Typography variant="body1" gutterBottom sx={{ marginRight: '12px', whiteSpace: 'nowrap' }}>
+            <strong>Artwork at: </strong>
+          </Typography>
           <Select
             value={selectedStation}
             onChange={(e) => setSelectedStation(e.target.value)}

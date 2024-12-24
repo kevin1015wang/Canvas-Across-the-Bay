@@ -14,6 +14,7 @@ import { bartOrangeLakeTwelve } from "../data/bartOrangeLakeTwelve.js";
 import { bartOAKAirport } from "../data/bartOAKAirport.js";
 import { bartStations } from "../data/bartStations.js";
 import { CircleMarker } from "react-leaflet";
+import { Popup } from "react-leaflet";
 
 const MapLayer = ({ onStationClick }) => {
     const mapRef = useRef(null);
@@ -154,7 +155,9 @@ const MapLayer = ({ onStationClick }) => {
                             onStationClick(station.station);
                         },
                     }}
-                />
+                >
+                    <Popup className="custom-popup"><strong>{station.station}</strong></Popup>
+                </CircleMarker>
             ))}
         </MapContainer>
     );

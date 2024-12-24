@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ArtCard from './components/artCard';
 import bartArtData from './data/bartArtData';
+import Divider from '@mui/material/Divider';
 
 const center = [51.505, -0.09];
 
@@ -44,6 +45,11 @@ function App() {
             Oftentimes, the subway/metro stations in the Bay are a sensory overload. There's a caterwauling of noises, a blur of visual spectacles, and occasionally <em>suspicious</em> smells. Within this dance that millions of Bay Area commuters two step in everyday, there are hidden moments of free (well $2.90 really) art that twirls around us. We pass by so much art every day without even realizing it. How many of these have you encountered on your commutes before? Click on an image to read their description page and learn more!
           </Typography>
         </CardContent>
+
+        <div style={{ paddingLeft: '16px', paddingRight: '16px' }}>
+          <Divider />
+        </div>
+
         <div style={{ flex: '1 1 auto', overflow: 'auto', padding: '16px' }}>
           {bartArtData.map((art, index) => (
             <ArtCard

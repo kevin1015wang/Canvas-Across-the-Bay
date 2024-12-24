@@ -12,6 +12,8 @@ import { bartOrangeOakland } from "../data/bartOrangeOakland.js";
 import { bartOrangeLakeBay } from "../data/bartOrangeLakeBay.js";
 import { bartOrangeLakeTwelve } from "../data/bartOrangeLakeTwelve.js";
 import { bartOAKAirport } from "../data/bartOAKAirport.js";
+import { bartStations } from "../data/bartStations.js";
+import { CircleMarker } from "react-leaflet";
 
 const MapLayer = () => {
     const mapRef = useRef(null);
@@ -136,6 +138,19 @@ const MapLayer = () => {
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeBayLine} />
             <Polyline pathOptions={orangeOptions} positions={bartOrangeLakeTwelve} />
             <Polyline pathOptions={beigeOptions} positions={bartOAKAirport} />
+
+            {bartStations.map((station, index) => (
+                <CircleMarker
+                    key={index}
+                    center={[station.lat, station.lng]}
+                    pathOptions={{
+                        color: station.artPresent ? "white" : "black",
+                        fillColor: station.artPresent ? "white" : "black",
+                        fillOpacity: 0.8,
+                    }}
+                    radius={5}
+                />
+            ))}
         </MapContainer>
     );
 };

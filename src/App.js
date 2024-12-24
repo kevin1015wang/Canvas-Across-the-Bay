@@ -59,7 +59,7 @@ const App = () => {
             <strong>Canvas Across the Bay</strong>
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Oftentimes, the subway/metro stations in the Bay are a sensory overload. There's a caterwauling of noises, a blur of visual spectacles, and occasionally <em>suspicious</em> smells. Within this dance that millions of Bay Area commuters two step in everyday, there are hidden moments of free (well $2.90 really) art that twirls around us. We pass by so much art every day without even realizing it. How many of these have you encountered on your commutes before? Click on an image to read their description page and learn more!
+            The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional <em>unexpected</em> smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes? Click on an image to uncover their stories and learn more!
           </Typography>
         </CardContent>
 
@@ -67,7 +67,7 @@ const App = () => {
           <Divider />
         </div>
 
-        <div style={{ padding: '16px', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap'}}>
+        <div style={{ padding: '16px', display: 'flex', alignItems: 'center', whiteSpace: 'nowrap' }}>
           <Typography variant="body1" gutterBottom sx={{ marginRight: '12px', whiteSpace: 'nowrap' }}>
             <strong>Artwork at: </strong>
           </Typography>

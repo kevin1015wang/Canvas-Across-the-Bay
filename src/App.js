@@ -79,19 +79,24 @@ const App = () => {
         </div>
 
         <div style={{ flex: '1 1 auto', overflow: 'auto', padding: '16px' }}>
-          {filteredArtData.map((art, index) => (
-            <ArtCard
-              key={index}
-              image={`/bartArtPics/${art.image}`}
-              title={art.name}
-              author={art.artistName}
-              station={art.stationLocation}
-              location={art.location}
-            />
-          ))}
+          {filteredArtData.length > 0 ? (
+            filteredArtData.map((art, index) => (
+              <ArtCard
+                key={index}
+                image={`/bartArtPics/${art.image}`}
+                title={art.name}
+                author={art.artistName}
+                station={art.stationLocation}
+                location={art.location}
+              />
+            ))
+          ) : (
+            <Typography variant="body1" align="center">
+              <strong>Oops! No art available at {selectedStation} station.</strong>
+            </Typography>
+          )}
         </div>
       </Card>
-
     </div>
   );
 }

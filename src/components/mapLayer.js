@@ -15,7 +15,7 @@ import { bartOAKAirport } from "../data/bartOAKAirport.js";
 import { bartStations } from "../data/bartStations.js";
 import { CircleMarker } from "react-leaflet";
 
-const MapLayer = () => {
+const MapLayer = ({ onStationClick }) => {
     const mapRef = useRef(null);
     const latitude = 37.7408249834177;
     const longitude = -122.32898300823841;
@@ -56,21 +56,21 @@ const MapLayer = () => {
         const toRad = (degrees) => (degrees * Math.PI) / 180;
         const toDeg = (radians) => (radians * 180) / Math.PI;
         const earthRadius = 6378137; // Radius of Earth in meters
-    
+
         return line.map(([lat, lng], i, arr) => {
             if (i === 0 || i === arr.length - 1) {
                 // No offset for the first or last point
                 return [lat, lng];
             }
             const [prevLat, prevLng] = arr[i - 1];
-    
+
             const dLat = toRad(lat - prevLat);
             const dLng = toRad(lng - prevLng);
-    
+
             const angle = Math.atan2(dLat, dLng) + Math.PI / 2; // Perpendicular angle
             const offsetLat = (offset * Math.cos(angle)) / earthRadius * (180 / Math.PI);
             const offsetLng = (offset * Math.sin(angle)) / (earthRadius * Math.cos(toRad(lat))) * (180 / Math.PI);
-    
+
             return [lat + offsetLat, lng + offsetLng];
         });
     };
@@ -98,8 +98,8 @@ const MapLayer = () => {
         }
         );
     };
-    
-    const bartYellowLine = computeParallelLine(bartRedYellowLine, 25); 
+
+    const bartYellowLine = computeParallelLine(bartRedYellowLine, 25);
 
     // compute parallel line from Daly City to West Oakland for blue line
     const bartBlueDalytoWOak = computeParallelLine(bartDalyWestOakland, 50);
@@ -109,7 +109,7 @@ const MapLayer = () => {
     const bartOrangeNorthExt = computeParallelLine(bartRedLineExt, 50);
     const bartOrangeOaklandLine = computeParallelLineIgnoreLast(bartOrangeOakland, 50);
     const bartOrangeLakeBayLine = computeParallelLineIgnoreLast(bartOrangeLakeBay, 50);
-    
+
     return (
         <MapContainer
             center={[latitude, longitude]}
@@ -149,6 +149,11 @@ const MapLayer = () => {
                         fillOpacity: 0.8,
                     }}
                     radius={5}
+                    eventHandlers={{
+                        click: () => {
+                            onStationClick(station.station);
+                        },
+                    }}
                 />
             ))}
         </MapContainer>

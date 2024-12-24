@@ -29,11 +29,15 @@ const App = () => {
       ? bartArtData
       : bartArtData.filter((art) => art.stationLocation === selectedStation);
 
+  const handleStationClick = (stationName) => {
+    setSelectedStation(stationName);
+  };
+
   return (
     <div style={{ position: 'relative', height: '100vh', width: '100vw' }}>
       {/* Map */}
       <div id="map" style={{ height: '100%', width: '100%' }}>
-        <MapLayer />
+        <MapLayer onStationClick={handleStationClick} />
       </div>
 
       {/* Card */}
@@ -69,6 +73,17 @@ const App = () => {
             onChange={(e) => setSelectedStation(e.target.value)}
             fullWidth
             size="small"
+            sx={{
+              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'black',
+              },
+              '&:hover .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'black',
+              },
+              '.MuiOutlinedInput-notchedOutline': {
+                borderColor: 'black',
+              },
+            }}
           >
             {stationOptions.map((station, index) => (
               <MenuItem key={index} value={station}>

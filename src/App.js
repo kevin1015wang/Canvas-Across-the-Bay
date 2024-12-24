@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -12,10 +13,22 @@ import Typography from '@mui/material/Typography';
 import ArtCard from './components/artCard';
 import bartArtData from './data/bartArtData';
 import Divider from '@mui/material/Divider';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import { bartStations } from './data/bartStations';
 
 const center = [51.505, -0.09];
 
-function App() {
+const App = () => {
+  const [selectedStation, setSelectedStation] = useState('All stations');
+
+  const stationOptions = ['All stations', ...new Set(bartStations.map((station) => station.station))];
+
+  const filteredArtData =
+    selectedStation === 'All stations'
+      ? bartArtData
+      : bartArtData.filter((art) => art.stationLocation === selectedStation);
+
   return (
     <div style={{ position: 'relative', height: '100vh', width: '100vw' }}>
       {/* Map */}
@@ -50,8 +63,23 @@ function App() {
           <Divider />
         </div>
 
+        <div style={{ padding: '16px' }}>
+          <Select
+            value={selectedStation}
+            onChange={(e) => setSelectedStation(e.target.value)}
+            fullWidth
+            size="small"
+          >
+            {stationOptions.map((station, index) => (
+              <MenuItem key={index} value={station}>
+                {station}
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
+
         <div style={{ flex: '1 1 auto', overflow: 'auto', padding: '16px' }}>
-          {bartArtData.map((art, index) => (
+          {filteredArtData.map((art, index) => (
             <ArtCard
               key={index}
               image={`/bartArtPics/${art.image}`}

@@ -1,14 +1,9 @@
-import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
-import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import MapLayer from './components/mapLayer';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ArtCard from './components/artCard';
 import bartArtData from './data/bartArtData';
@@ -18,8 +13,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { bartStations } from './data/bartStations';
 import { muniStations } from './data/muniStations';
 import { muniArtData } from './data/muniArtData';
-
-const center = [51.505, -0.09];
 
 const App = () => {
   const [selectedStation, setSelectedStation] = useState('All stations');

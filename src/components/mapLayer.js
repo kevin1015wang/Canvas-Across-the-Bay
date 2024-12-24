@@ -37,7 +37,6 @@ const MapLayer = ({ onStationClick }) => {
     // Function to compute a parallel line with a small offset
     const computeParallelLine = (line, offset) => {
         const toRad = (degrees) => (degrees * Math.PI) / 180;
-        const toDeg = (radians) => (radians * 180) / Math.PI;
         const earthRadius = 6378137; // Radius of Earth in meters
 
         return line.map(([lat, lng], i, arr) => {
@@ -57,7 +56,6 @@ const MapLayer = ({ onStationClick }) => {
 
     const computeParallelLineIgnoreLast = (line, offset) => {
         const toRad = (degrees) => (degrees * Math.PI) / 180;
-        const toDeg = (radians) => (radians * 180) / Math.PI;
         const earthRadius = 6378137; // Radius of Earth in meters
 
         return line.map(([lat, lng], i, arr) => {
@@ -76,30 +74,6 @@ const MapLayer = ({ onStationClick }) => {
 
             return [lat + offsetLat, lng + offsetLng];
         });
-    };
-
-    const computeParallelLineIgnoreFirst = (line, offset) => {
-        const toRad = (degrees) => (degrees * Math.PI) / 180;
-        const toDeg = (radians) => (radians * 180) / Math.PI;
-        const earthRadius = 6378137; // Radius of Earth in meters
-
-        return line.map(([lat, lng], i, arr) => {
-            if (i === 0) {
-                // No offset for the first point
-                return [lat, lng];
-            }
-            const [prevLat, prevLng] = arr[i - 1];
-
-            const dLat = toRad(lat - prevLat);
-            const dLng = toRad(lng - prevLng);
-
-            const angle = Math.atan2(dLat, dLng) + Math.PI / 2; // Perpendicular angle
-            const offsetLat = (offset * Math.cos(angle)) / earthRadius * (180 / Math.PI);
-            const offsetLng = (offset * Math.sin(angle)) / (earthRadius * Math.cos(toRad(lat))) * (180 / Math.PI);
-
-            return [lat + offsetLat, lng + offsetLng];
-        }
-        );
     };
 
     const bartYellowLine = computeParallelLine(bartRedYellowLine, 25);

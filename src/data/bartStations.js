@@ -202,5 +202,107 @@ export const bartStations = [
         lat: 37.9954399473275, 
         lng: -121.78049121286341,
         artPresent: false
-    }
+    },
+    {
+        station: "Lake Merritt",
+        lat: 37.79708384135932,
+        lng: -122.265269214711,
+        artPresent: true
+    },
+    {
+        station: "Fruitvale",
+        lat: 37.774777647559645,
+        lng: -122.22409945571924,
+        artPresent: true
+    },
+    {
+        station: "Coliseum",
+        lat: 37.75364647645824,
+        lng: -122.19684549185124,
+        artPresent: false
+    },
+    {
+        station: "Oakland Airport Connector - Coliseum Station",
+        lat: 37.752311841936454,
+        lng: -122.1961891712258,
+        artPresent: true
+    },
+    {
+        station: "Oakland Airport Connector - Airport",
+        lat: 37.713254072951976,
+        lng: -122.21225707220404,
+        artPresent: true
+    },
+    {
+        station: "San Leandro",
+        lat: 37.72179347101787,
+        lng: -122.16077992942458,
+        artPresent: false
+    },
+    {
+        station: "Bay Fair",
+        lat: 37.696949776873225,
+        lng: -122.1264655206889,
+        artPresent: false
+    },
+    {
+        station: "Castro Valley",
+        lat: 37.69077598611542,
+        lng: -122.07561692377772,
+        artPresent: false
+    },
+    {
+        station: "West Dublin/Pleasanton",
+        lat: 37.699702415955954,
+        lng: -121.92833534236414,
+        artPresent: false
+    },
+    {
+        station: "Dublin/Pleasanton",
+        lat: 37.701587854251414,
+        lng: -121.89926838524453,
+        artPresent: false
+    },
+    {
+        station: "Hayward",
+        lat: 37.669734102716035,
+        lng: -122.08696658317209,
+        artPresent: false
+    },
+    {
+        station: "South Hayward",
+        lat: 37.63437542482882,
+        lng: -122.05721388295525,
+        artPresent: false
+    },
+    {
+        station: "Union City",
+        lat: 37.590636474035456,
+        lng: -122.01731727399913,
+        artPresent: true
+    },
+    {
+        station: "Fremont",
+        lat: 37.557443481138,
+        lng: -121.97665042653831,
+        artPresent: true
+    },
+    {
+        station: "Warm Springs",
+        lat: 37.50216092394219,
+        lng: -121.93930777264185,
+        artPresent: true
+    },
+    {
+        station: "Milpitas",
+        lat: 37.410250081847394,
+        lng: -121.89106841353144,
+        artPresent: false
+    },
+    {
+        station: "Berryesa/North San Jose",
+        lat: 37.368464582049484,
+        lng: -121.87471010936808,
+        artPresent: false
+    },
 ];

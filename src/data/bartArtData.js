@@ -286,6 +286,13 @@ const bartArtData = [
         artistName: `Catherine Widgery`,
         location: "East, West Concourse, and Round Pavillion"
     },
+    {
+        name: "Wind Portal",
+        image: "wind-portal.jpg",
+        stationLocation: "San Francisco International Airport",
+        artistName: `Ned Khan`,
+        location: "Main level of the station through escalators."
+    },
 ];
 
 export default bartArtData;

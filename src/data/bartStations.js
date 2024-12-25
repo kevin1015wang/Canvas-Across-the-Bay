@@ -9,7 +9,7 @@ export const bartStations = [
         station: "San Francisco International Airport",
         lat: 37.61607084768668, 
         lng: -122.39233251833198,
-        artPresent: false
+        artPresent: true
     },
     {
         station: "San Bruno",

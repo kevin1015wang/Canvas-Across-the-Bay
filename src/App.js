@@ -45,7 +45,7 @@ const App = () => {
       </div>
 
       {selectedArt ? (
-        <ArtDetails title={selectedArt.name} onBack={handleBack} />
+        <ArtDetails art={selectedArt} onBack={handleBack} />
       ) : (
         <Card
           sx={{

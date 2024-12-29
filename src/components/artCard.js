@@ -9,10 +9,16 @@ export default function ArtCard({
     title,
     author,
     station,
-    location
+    location,
+    onClick,
 }) {
     return (
-        <Card sx={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
+        <Card onClick={onClick} sx={{
+            display: 'flex', alignItems: 'center', marginBottom: '10px', cursor: 'pointer', transition: 'transform 0.3s ease, box-shadow 0.3 ease', '&:hover': {
+                transform: 'scale(1.02)',
+                boxShadow: 6,
+            },
+        }}>
             <Box sx={{ width: '200px', height: '130px', paddingLeft: '10px', overflow: 'hidden', flexShrink: 0 }}>
                 <CardMedia
                     component="img"

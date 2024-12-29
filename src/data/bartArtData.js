@@ -4,7 +4,11 @@ const bartArtData = [
         image: "their-eyes-were-watching-god.jpg",
         stationLocation: "12th St. Oakland",
         artistName: "Diana Pumpelly Bates",
-        location: "Broadway at 13th St. Entrance NE Corner. Street level. Stair/escalator entrance"
+        location: "Broadway at 13th St. Entrance NE Corner. Street level. Stair/escalator entrance",
+        picAttribution: "Chronicle / Gina Gayle",
+        picLink: "https://s.hdnux.com/photos/10/27/56/2194320/5/1024x1024.jpg",
+        description: `The metal panel, which was installed two weeks ago in front of De Lauer's news stand on Broadway, is called "Their Eyes Were Watching God," from the Zora Neale Hurston novel. It features a central area adorned with eyes glancing expectantly in different directions, surrounded by a representation of the Oakland hills. Bates said: "It's supposed to suggest that something is about to happen, something is about to be born, and you never know what you're going to get." - SFGate`,
+        artistStory: `Diana Pumpelly Bates is a sculptor and public artist working in bronze, iron, and steel. Her work has been included in exhibitions at the Oakland Museum, Oakland, CA; The Triton Museum, Santa Clara, CA; the Oliver Art Center at California College of Arts and Crafts; the National Civil Rights Museum, Memphis, Tennessee; and John Jay College, New York. She has completed several public art commissions for transportation agencies in the region, and a number of Public Art Programs in Northern California. She also exhibits in galleries and has served on numerous consultant teams, advisory committees, and review panels. - SV/Laureates`
     },
     {
         name: "Coming and Going From Sun Up to Sundown",

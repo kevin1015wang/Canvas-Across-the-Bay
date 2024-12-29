@@ -20,41 +20,46 @@ const ArtDetails = ({ art, onBack }) => {
         flexDirection: 'column',
       }}
     >
-      <CardContent>
-        {/* Row with Back Button and Station Location */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            borderBottom: '1px solid black',
-            spacing: '8px',
-            paddingBottom: '8px',
-            marginBottom: '16px',
-            justifyItems: 'center'
+      {/* Back Button and Station Location */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          borderBottom: '1px solid black',
+          paddingBottom: '12px',
+          paddingLeft: '12px',
+          paddingTop: '12px',
+        }}
+      >
+        <Button
+          size="small"
+          variant="outlined"
+          startIcon={<ArrowBackIosIcon />}
+          onClick={onBack}
+          sx={{ color: 'black', borderColor: 'black', marginRight: '8px' }}
+        >
+          Back
+        </Button>
+        <Typography
+          variant="h7"
+          sx={{
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            maxWidth: '80%',
           }}
         >
-          <Button
-            size="small"
-            variant="outlined"
-            startIcon={<ArrowBackIosIcon />}
-            onClick={onBack}
-            sx={{ color: 'black', borderColor: 'black', marginRight: '8px' }}
-          >
-            Back
-          </Button>
-          <Typography
-            variant="h7"
-            sx={{
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              maxWidth: '80%',
-            }}
-          >
-            <strong>{art.stationLocation} | {art.name}</strong>
-          </Typography>
-        </div>
+          <strong>{art.stationLocation} | {art.name}</strong>
+        </Typography>
+      </div>
 
+      {/* Scrollable Content */}
+      <CardContent
+        sx={{
+          overflowY: 'auto',
+          flex: '1 1 auto',
+        }}
+      >
         {/* Art Name */}
         <Typography variant="h8" component="div" sx={{ fontWeight: 600 }}>
           {art.stationLocation}
@@ -69,11 +74,42 @@ const ArtDetails = ({ art, onBack }) => {
         </Typography>
 
         {/* Art Image */}
-        <img
-          src={`/bartArtPics/${art.image}`}
-          alt={art.name}
-          style={{ objectFit: 'cover', width: '100%', height: '275px', marginTop: '16px', borderRadius: '8px' }}
-        />
+        <a href={art.picLink} target="_blank" rel="noreferrer">
+          <img
+            src={`/bartArtPics/${art.image}`}
+            alt={art.name}
+            style={{ objectFit: 'cover', width: '100%', height: '275px', marginTop: '16px', borderRadius: '8px' }}
+          />
+        </a>
+
+        <Typography variant="caption" component="p" sx={{ fontSize: '0.75rem' }}>
+          {art.picAttribution}
+        </Typography>
+
+        {/* Art Location */}
+        <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
+          Where is This?
+        </Typography>
+
+        <Typography variant="body2" component="div">
+          {art.location}
+        </Typography>
+
+        <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
+          About the Project
+        </Typography>
+
+        <Typography variant="body2" component="div">
+          {art.description}
+        </Typography>
+
+        <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
+          About the Artist
+        </Typography>
+
+        <Typography variant="body2" component="div">
+          {art.artistStory}
+        </Typography>
       </CardContent>
     </Card>
   );

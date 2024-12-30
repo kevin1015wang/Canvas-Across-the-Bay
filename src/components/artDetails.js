@@ -100,16 +100,26 @@ const ArtDetails = ({ art, onBack }) => {
         </Typography>
 
         <Typography variant="body2" component="div">
-          {art.description}
+          {art.description} - <a href={art.descriptionLink} target="_blank" rel="noreferrer">{art.descriptionSource}</a>
         </Typography>
 
         <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
           About the Artist
         </Typography>
 
-        <Typography variant="body2" component="div">
-          {art.artistStory}
-        </Typography>
+        {art.artistStory.split('\n').map((paragraph, index) => (
+          <Typography key={index} variant="body2" component="div" sx={{ marginBottom: '8px' }}>
+            {paragraph}
+            {index === art.artistStory.split('\n').length - 1 && (
+              <>
+                {' - '}
+                <a href={art.artistStoryLink} target="_blank" rel="noreferrer">
+                  {art.artistStorySource}
+                </a>
+              </>
+            )}
+          </Typography>
+        ))}
       </CardContent>
     </Card>
   );

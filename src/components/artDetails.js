@@ -4,8 +4,12 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import { useTheme } from '@mui/material/styles';
 
 const ArtDetails = ({ art, onBack }) => {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
+
   return (
     <Card
       sx={{
@@ -14,10 +18,11 @@ const ArtDetails = ({ art, onBack }) => {
         top: '20px',
         left: '20px',
         zIndex: 1000,
-        background: 'white',
+        backgroundColor: 'background.paper',
         height: '90vh',
         display: 'flex',
         flexDirection: 'column',
+        boxShadow: theme.shadows[3],
       }}
     >
       {/* Back Button and Station Location */}
@@ -25,7 +30,7 @@ const ArtDetails = ({ art, onBack }) => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          borderBottom: '1px solid black',
+          borderBottom: `1px solid ${theme.palette.divider}`,
           paddingBottom: '12px',
           paddingLeft: '12px',
           paddingTop: '12px',
@@ -36,7 +41,14 @@ const ArtDetails = ({ art, onBack }) => {
           variant="outlined"
           startIcon={<ArrowBackIosIcon />}
           onClick={onBack}
-          sx={{ color: 'black', borderColor: 'black', marginRight: '8px' }}
+          sx={{
+            color: 'text.primary',
+            borderColor: isDarkMode ? 'white' : 'divider',
+            marginRight: '8px',
+            '&:hover': {
+              borderColor: isDarkMode ? 'white' : 'text.primary',
+            },
+          }}
         >
           Back
         </Button>
@@ -47,6 +59,7 @@ const ArtDetails = ({ art, onBack }) => {
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             maxWidth: '80%',
+            color: 'text.primary',
           }}
         >
           <strong>{art.stationLocation} | {art.name}</strong>
@@ -58,6 +71,7 @@ const ArtDetails = ({ art, onBack }) => {
         sx={{
           overflowY: 'auto',
           flex: '1 1 auto',
+          color: 'text.primary',
         }}
       >
         {/* Art Name */}
@@ -78,11 +92,17 @@ const ArtDetails = ({ art, onBack }) => {
           <img
             src={`/bartArtPics/${art.image}`}
             alt={art.name}
-            style={{ objectFit: 'cover', width: '100%', height: '275px', marginTop: '16px', borderRadius: '8px' }}
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '275px',
+              marginTop: '16px',
+              borderRadius: '8px',
+            }}
           />
         </a>
 
-        <Typography variant="caption" component="p" sx={{ fontSize: '0.75rem' }}>
+        <Typography variant="caption" component="p" sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
           {art.picAttribution}
         </Typography>
 
@@ -100,7 +120,10 @@ const ArtDetails = ({ art, onBack }) => {
         </Typography>
 
         <Typography variant="body2" component="div">
-          {art.description} - <a href={art.descriptionLink} target="_blank" rel="noreferrer">{art.descriptionSource}</a>
+          {art.description} -{' '}
+          <a href={art.descriptionLink} target="_blank" rel="noreferrer">
+            {art.descriptionSource}
+          </a>
         </Typography>
 
         <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>

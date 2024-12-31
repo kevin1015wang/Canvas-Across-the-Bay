@@ -4,55 +4,119 @@ export const muniArtData = [
         image: "yangge.jpg",
         stationLocation: "Chinatown - Rose Pak Station",
         artistName: "Yumei Hou",
-        location: "At end of first escalator"
+        location: "At end of first escalator",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "Yangge: Dance of the Bride and Yangge: Dance of the New Year, are inspired by the Yangge (Rice Sprout Song), a popular folk dance from the northern provinces of China, which typically involves groups of people dancing in a variety of costumes to celebrate happy occasions. Capturing the lively spirit of the Dance of the Bride, Hou features characters from a Manchu wedding celebration: a bride in a sedan chair, musicians, stilt walkers, and fan dancers. Bringing further playfulness and whimsy to the composition are a kitten, birds, butterflies, and plants adorning the artwork’s border. Capturing the celebratory spirit of the Dance of the New Year, Hou features characters from the 16th century Chinese novel “Journey to the West”: the Tang Monk, the Sand Monk, the Pig, and the Monkey King. Also portrayed are the dragon and lion dances, a stilt dancer with firecrackers, a Manchu shaman holding a peace drum, and other popular folk figures. The artwork on the upper mezzanine landing is approximately 16 feet high by 36 feet wide, the artwork at the ticketing hall is approximately 30 feet high by 35 feet wide.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Yumei Hou is a sculptor and renowned master of the ancient Chinese art of paper cutting. Hou has dedicated decades to learning, perfecting, and passing on the art of paper cutting in China and the United States. Her talent and dedication was recognized by the San Francisco Arts Commission in 2010, when she was selected to design and install a building-wide artwork for the Chinatown Central Subway, slated to open in the next several years.`,
+        artistStorySource: "Craft in America",
+        artistStoryLink: "https://www.craftinamerica.org/artist/yumei-hou"
     },
     {
         name: "A Sense of Community",
         image: "a-sense-of-community.jpg",
         stationLocation: "Chinatown - Rose Pak Station",
         artistName: "Clare Rojas",
-        location: "Concourse Level"
+        location: "Concourse Level",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "Acclaimed San Francisco Bay Area-based artist, Clare Rojas has created, A Sense of Community, a ceramic tile mural for the crosscut cavern wall at the concourse level of the Central Subway Chinatown - Rose Pak Station. Rojas’s, A Sense of Community, features a variety of unique Silk Road textiles patterned in the style of a cathedral window quilt. Sourced from art and design institutions, fashion designers, and local fabric stores, the swatches are framed within a small circle closely connected to those around it, resulting in a dynamic pattern that represents the Chinatown community held together by a common history and culture. The artwork is approximately 14 feet high and 35 feet wide.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Clare E. Rojas (born 1976), also known by stage name Peggy Honeywell, is an American multidisciplinary artist. She is part of the Mission School. Rojas is "known for creating powerful folk-art-inspired tableaus that tackle traditional gender roles."[3] She works in a variety of media, including painting, installations, video, street art, and children's books. Rojas lives in the San Francisco Bay Area.`,
+        artistStorySource: "Wikipedia",
+        artistStoryLink: "https://en.wikipedia.org/wiki/Clare_Rojas"
     },
     {
         name: "Lucy in the Sky",
         image: "lucy-in-the-sky.jpg",
         stationLocation: "Union Square - Market St Station",
         artistName: "Erwin Redl",
-        location: "Powell St. Station Connector"
+        location: "Powell St. Station Connector",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "The immersive artwork, Lucy in the Sky, by Ohio-based artist, Erwin Redl for the Union Square/Market Street Station is an illuminated installation comprised of over 500 translucent 10 x 10 inch light panels, each containing an array of color LEDs. The panels are suspended along the entire length of the concourse level’s ceiling, spanning a distance of nearly 670 feet. The light panels, installed in a diamond-shaped pattern are computer programmed to slowly change color and display simple patterns, creating a kaleidoscopic experience.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Statement from Erwin Redl: My work reflects upon the condition of art making after the “digital experience.” The formal and structural approach to various media I employ, such as installation, drawings, CD-ROM, Internet and sound, engages in binary logic, because I assemble the material according to a narrow set of self-imposed rules which often incorporate complex algorithms, controlled randomness and other methods inspired by computer code.`,
+        artistStorySource: "Erwin Redl",
+        artistStoryLink: "https://www.paramedia.net/information/statement.php"
     },
     {
         name: "Silent Stream",
         image: "silent-stream.jpg",
         stationLocation: "Union Square - Market St Station",
         artistName: "Jim Campbell and Werner Klotz",
-        location: "Platform Level"
+        location: "Platform Level",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "For the platform level of the Union Square/Market Street Station, world-renowned artists Jim Campbell and Werner Klotz have created Silent Stream, a site-specific suspended stainless-steel sculpture that resembles an underground creek flowing through the station. Approximately 250 feet in length and a width that varies from 4 feet to 8 feet, the sculpture, comprised of highly polished steel disks, winds its way through the struts along the length of the platform while reflecting the passengers and trains passing below.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Jim Campbell (b. 1956). Campbell’s work has been exhibited internationally and throughout North America in institutions such as the Whitney Museum of American Art, New York; the San Francisco Museum of Modern Art; The International Center for Photography, New York; The J. Paul Getty Museum, Los Angeles and the Museum of Contemporary Art, Sydney, Australia.\n\nWerner Klotz, (American-born in Germany) is an internationally active artist working in the fields of installation and public art. He works exclusively within site-specific and interactive contexts that rely on viewer participation to emphasize themes and ideas unique to each project. Using a variety of materials and strategies including light, sound, video and mechanics, these installations engage viewers in ways that address their orientations towards a site and serve as instruments for perception into what makes each site, and each viewer, a unique point of view.`,
+        artistStorySource: "Jim Campbell and Werner Klotz Personal Websites",
+        artistStoryLink: "https://werner-klotz.de/biography/"
     },
     {
         name: "Convergence: Commute Patterns",
         image: "convergence.jpg",
         stationLocation: "Union Square - Market St Station",
         artistName: "Hughen/Starkweather",
-        location: "Façade, roof deck, and ceiling of the entrance."
+        location: "Façade, roof deck, and ceiling of the entrance.",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "For the Union Square/Market Street Station, San Francisco-based artist team Hughen/Starkweather’s (Amanda Hughen and Jennifer Starkweather) artwork, Convergence: Commute Patterns, spans the façade, roof deck, and ceiling of the entrance into the Union Square Station. This site-specific glass artwork layers a precise topographic map of San Francisco with painted circles that reference Bay Area commute pattern densities. The commuter activates the artwork as they enter the subway station and descend underground, creating a real-time layering of abstraction (shapes and lines) and its source materials (commuters and topography). The title of the artwork, Convergence: Commute Patterns, refers to a convergence as a place where ocean currents or airflows meet, marked by an upwelling of air or a downwelling of water. Commuter movement can feel similar to the rising and falling tides of an ocean or bay as people enter and depart a city each day.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Hughen/Starkweather is the collaboration of artists Jennifer Starkweather and Amanda Hughen, who have worked as a team for almost 20 years. Together they create research-based, abstract artworks about specific topics or locations. For the past several years Hughen/Starkweather have researched the impacts of climate disruption on places where water meets land, exploring engineered infrastructures that are inextricably interwoven with natural systems in the landscape, and how these systems might fail or succeed together.`,
+        artistStorySource: "Hughen/Starkweather",
+        artistStoryLink: "http://www.hughenstarkweather.com/about"
     },
     {
         name: "Arc Cycle",
         image: "arc-cycle.jpg",
         stationLocation: "Yerba Buena - Moscone Station",
         artistName: "Catherine Wagner",
-        location: "Concourse Level"
+        location: "Concourse Level",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "For the concourse level of the Yerba Buena/Moscone Station, internationally renowned Bay Area based photographer, Catherine Wagner, has translated several of her acclaimed photographs from the late 70s documenting the construction of the George Moscone Convention Center into multiple large-scale permanent works. Nearly 50 years ago, wielding a large-format camera and a grant from the National Endowment for the Arts, Wagner hung from scaffolding and employed any means necessary to capture the monumental construction effort in incredible detail. Today, Arc Cycle, Wagner’s site-specific work for the Central Subway, consists of 6 laser-etched granite artworks approximately 12.5 feet high by 10 feet wide at the concourse level, and art glass at the station’s entry at approximately 14 feet high by 26 feet wide.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `For over thirty years Catherine Wagner has been observing the built environment as a metaphor for how we construct our cultural identities. She’s examined institutions as various as art museums and science labs, the home and Disneyland. Ms. Wagner’s process involves the investigation of what art critic David Bonetti calls "the systems people create, our love of order, our ambition to shape the world, the value we place on knowledge, and the tokens we display to express ourselves."`,
+        artistStorySource: "Catherine Wagner",
+        artistStoryLink: "https://catherinewagner.org/about"
     },
     {
         name: "Face C/Z",
         image: "face-cz.jpg",
         stationLocation: "Yerba Buena - Moscone Station",
         artistName: "Leslie Shows",
-        location: "Ticketing hall on the concourse level."
+        location: "Ticketing hall on the concourse level.",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "Featured in the ticketing hall on the concourse level of the Yerba Buena/Moscone Station, San Francisco-based mixed media artist, Leslie Shows has created Face C/Z, an integrated artwork approximately 35 feet wide by 14 feet high. Based on an image of iron pyrite made with a consumer grade scanner, Face C/Z was hand fabricated in a unique style combining mirrored, fused, painted, and engraved glass, sheet metal, and other permanent materials. The use of pyrite, also known as “fool’s gold,” speaks to ever-shifting notions of value in industry and aesthetics, the many gold rushes of the San Francisco Bay Area, and the alchemy of glass and light.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `Leslie Shows (born 1977) is an American artist, who is recognized for expanding the boundaries of landscape painting. Shows' earlier works were mixed-media collages depicting abstracted landscapes. Her more recent paintings, while retaining the use of mixed media, have become more abstracted and focus on mineral textures and geologic features.Her work is included in the collection at San Francisco Museum of Modern Art.`,
+        artistStorySource: "Wikipedia",
+        artistStoryLink: "https://en.wikipedia.org/wiki/Leslie_Shows"
     },
     {
         name: "Microcosmic",
         image: "microcosmic.jpg",
         stationLocation: "4th & Brannan Station",
         artistName: "Moto Ohtake",
-        location: "On outdoor platform."
+        location: "On outdoor platform.",
+        picAttribution: "San Francisco Arts Commission",
+        picLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        description: "Bay Area-based artist Moto Ohtake’s wind-activated kinetic sculpture, Microcosmic, is mounted on a 40-foot light pole at the 4th and Brannan platform station. Fabricated from stainless steel the sculpture measures approximately 15 feet by 15 feet by 3 feet when stretched to its full capacity. In response to the changing weather patterns, Microcosmic’s wings move at 31 rotating points in gyroscopic circular motions and are angled differently to create opposing rotations under the same wind conditions, allowing viewers to experience an infinite number of combinations. Depending on the wind patterns Microcosmic will be contemplative at time and dynamic and energetic at others.",
+        descriptionSource: "San Francisco Arts Commission",
+        descriptionLink: "https://sfartscommission.org/experience-art/projects/central-subway-public-art-program",
+        artistStory: `As a sculptor, my work has been inspired by the elements of nature on both a macro and microscopic level, from galactic bodies to the delicate patterns of crystalline structures. In 2000, I began to explore a new series of stainless steel kinetic sculpture that has served as a catalyst to augment these themes. The kinetic work interacts with nature and allows the viewer to become engaged with the sculpture. The sculpture responds to the environment and serves to heighten the viewers' awareness of their natural surroundings. They are self-contained systems that are wind driven and provide the viewer with an infinite number of movements that range from tranquil to frenetic as the weather patterns change.`,
+        artistStorySource: "Moto Ohtake",
+        artistStoryLink: "http://www.motoohtake.com/statement.html"
     },
 ];

@@ -81,7 +81,6 @@ const App = () => {
               background: 'background.paper',
               display: 'flex',
               flexDirection: 'column',
-              height: { xs: '100vh', md: '90vh' },
               borderRadius: { xs: 0, md: '7px' },
             }}
           >

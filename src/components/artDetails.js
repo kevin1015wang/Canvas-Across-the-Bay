@@ -121,7 +121,7 @@ const ArtDetails = ({ art, onBack }) => {
 
         <Typography variant="body2" component="div">
           {art.description} -{' '}
-          <a href={art.descriptionLink} target="_blank" rel="noreferrer">
+          <a href={art.descriptionLink} target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>
             {art.descriptionSource}
           </a>
         </Typography>
@@ -136,7 +136,7 @@ const ArtDetails = ({ art, onBack }) => {
             {index === art.artistStory.split('\n').length - 1 && (
               <>
                 {' - '}
-                <a href={art.artistStoryLink} target="_blank" rel="noreferrer">
+                <a href={art.artistStoryLink} target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>
                   {art.artistStorySource}
                 </a>
               </>

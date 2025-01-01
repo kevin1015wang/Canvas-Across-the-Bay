@@ -1,11 +1,11 @@
 # Canvas Across the Bay
-<img src="https://i.ibb.co/F6mV6k9/SCR-20250101-kwlb.png" alt="Image Description" width="800"/>
+<a href="https://canvasacrossthebay.kevindw.dev/" target="_blank"><img src="https://i.ibb.co/F6mV6k9/SCR-20250101-kwlb.png" alt="Image Description" width="800"/></a>
 
 This is the repository for a little side project that showcases the art in public transit stations across the Bay Area. I was inspired to build this after seeing the winner of the 2024 MTA Open Data Challenge, [Art Off the Rails](https://artworkmta.pages.dev/) by [Stephanie Dang](https://www.stephanie-dang.com/). Most of the design, functionality, and ideas were from Art Off the Rails. Highly recommend checking it out! I wanted to see something similar for the Bay Area, hence “Canvas Across the Bay”.
 
 > The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional unexpected smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes?
 
-Visit the project at [canvasacrossthebay.kevindw.dev](canvasacrossthebay.kevindw.dev)!
+Visit the project at [canvasacrossthebay.kevindw.dev](https://canvasacrossthebay.kevindw.dev/)!
 
 ## Art Data
 

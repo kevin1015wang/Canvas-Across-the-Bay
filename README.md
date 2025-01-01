@@ -21,7 +21,7 @@ In the meantime, sources for all images are in captions below pictures after cli
 
 ## One final note…
 
-This is still a huge work in progress from my winter break. More will be added in the coming days! I’ll also make it open source in the coming weeks!
+This is still a huge work in progress from my winter break. More will be added in the coming days! Feel free to create issues or PRs!
 
 Hopefully, the project helped you discover art that you might’ve missed in your commute!
 

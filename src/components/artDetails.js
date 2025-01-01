@@ -13,16 +13,17 @@ const ArtDetails = ({ art, onBack }) => {
   return (
     <Card
       sx={{
-        width: 535,
+        width: { xs: '100vw', md: 535 },
         position: 'absolute',
-        top: '20px',
-        left: '20px',
+        top: { xs: 0, md: '20px' }, 
+        left: { xs: 0, md: '20px' }, 
         zIndex: 1000,
         backgroundColor: 'background.paper',
-        height: '90vh',
+        height: { xs: '100vh', md: '90vh' },
         display: 'flex',
         flexDirection: 'column',
         boxShadow: theme.shadows[3],
+        borderRadius: { xs: 0, md: '7px' },
       }}
     >
       {/* Back Button and Station Location */}

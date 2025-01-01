@@ -72,15 +72,17 @@ const App = () => {
         ) : (
           <Card
             sx={{
-              maxWidth: 535,
+              width: { xs: '100vw', md: '535px' }, 
+              height: { xs: '100vh', md: '90vh' }, 
               position: 'absolute',
-              top: '20px',
-              left: '20px',
+              top: { xs: 0, md: '20px' }, 
+              left: { xs: 0, md: '20px' }, 
               zIndex: 1000,
               background: 'background.paper',
-              height: '90vh',
               display: 'flex',
               flexDirection: 'column',
+              height: { xs: '100vh', md: '90vh' },
+              borderRadius: { xs: 0, md: '7px' },
             }}
           >
             <CardContent sx={{ flex: '0 0 auto' }}>
@@ -88,7 +90,7 @@ const App = () => {
                 <strong>Canvas Across the Bay</strong>
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional <em>unexpected</em> smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes? <a href="https://evening-gem-e8a.notion.site/Canvas-Across-the-Bay-Acknowledgements-166eaa6eb8b18078824cc820465a8953?pvs=4" target="_blank" rel="noreferrer" style={{ color: prefersDarkMode ? 'white' : 'inherit' }}>Acknowledgements</a>
+                The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional <em>unexpected</em> smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes? Click on an image to read their description page and learn more! <a href="https://evening-gem-e8a.notion.site/Canvas-Across-the-Bay-Acknowledgements-166eaa6eb8b18078824cc820465a8953?pvs=4" target="_blank" rel="noreferrer" style={{ color: prefersDarkMode ? 'white' : 'inherit' }}>Acknowledgements</a>
               </Typography>
             </CardContent>
             <div style={{ paddingLeft: '16px', paddingRight: '16px' }}>

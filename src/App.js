@@ -49,6 +49,7 @@ const App = () => {
 
   const handleStationClick = (stationName) => {
     setSelectedStation(stationName);
+    setSelectedArt(null);
   };
 
   const handleArtClick = (art) => {

@@ -19,7 +19,7 @@ export default function ArtCard({
                 boxShadow: 6,
             },
         }}>
-            <Box sx={{ width: { xs: '50%', md: '200px' }, height: '130px', paddingLeft: '10px', overflow: 'hidden', flexShrink: 0 }}>
+            <Box sx={{ width: { xs: '50%', md: '225px' }, height: '130px', paddingLeft: '10px', overflow: 'hidden', flexShrink: 0 }}>
                 <CardMedia
                     component="img"
                     sx={{

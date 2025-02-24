@@ -17,10 +17,12 @@ import { bartStations } from './data/bartStations';
 import { muniStations } from './data/muniStations';
 import { muniArtData } from './data/muniArtData';
 import ArtDetails from './components/artDetails';
+import AcknowledgeCard from './components/acknowledge';
 
 const App = () => {
   const [selectedStation, setSelectedStation] = useState('All stations');
   const [selectedArt, setSelectedArt] = useState(null);
+  const [acknowledgements, setAcknowlegements] = useState(false);
 
   // Detect dark mode preference
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -58,6 +60,7 @@ const App = () => {
 
   const handleBack = () => {
     setSelectedArt(null);
+    setAcknowlegements(false);
   };
 
   return (
@@ -70,14 +73,14 @@ const App = () => {
 
         {selectedArt ? (
           <ArtDetails art={selectedArt} onBack={handleBack} />
-        ) : (
+        ) : acknowledgements ? (<AcknowledgeCard onBack={handleBack}></AcknowledgeCard>) : (
           <Card
             sx={{
-              width: { xs: '100vw', md: '535px' }, 
-              height: { xs: '100vh', md: '90vh' }, 
+              width: { xs: '100vw', md: '535px' },
+              height: { xs: '100vh', md: '90vh' },
               position: 'absolute',
-              top: { xs: 0, md: '20px' }, 
-              left: { xs: 0, md: '20px' }, 
+              top: { xs: 0, md: '20px' },
+              left: { xs: 0, md: '20px' },
               zIndex: 1000,
               background: 'background.paper',
               display: 'flex',
@@ -90,7 +93,17 @@ const App = () => {
                 <strong>Canvas Across the Bay</strong>
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional <em>unexpected</em> smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes? Click on an image to read their description page and learn more! <a href="https://evening-gem-e8a.notion.site/Canvas-Across-the-Bay-Acknowledgements-166eaa6eb8b18078824cc820465a8953?pvs=4" target="_blank" rel="noreferrer" style={{ color: prefersDarkMode ? 'white' : 'inherit' }}>Acknowledgements</a>
+                The Bay Area's transit hubs can often feel like sensory overload—an orchestra of sounds, a flurry of movement, and the occasional <em>unexpected</em> smell. Yet, amidst this bustling daily rhythm that connects millions across the region, there are moments of hidden artistry waiting to be discovered. From BART stations to Muni platforms, public art transforms our shared spaces into galleries on the go. These installations often go unnoticed as we rush by. How many of these hidden treasures have you encountered in your commutes? Click on an image to read their description page and learn more! <span
+                  onClick={() => setAcknowlegements(true)}
+                  style={{
+                    color: prefersDarkMode ? 'white' : 'inherit',
+                    cursor: 'pointer',
+                    textDecoration: 'underline'
+                  }}
+                >
+                  Acknowledgements
+                </span>
+
               </Typography>
             </CardContent>
             <div style={{ paddingLeft: '16px', paddingRight: '16px' }}>

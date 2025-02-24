@@ -94,6 +94,10 @@ const AcknowledgeCard = ({ onBack }) => {
                     />
                 </a>
 
+                <Typography variant="caption" component="p" sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
+                    SFMTA
+                </Typography>
+
                 <div style={{ marginTop: '8px' }} />
 
                 <Typography variant="body2" component="div">
@@ -105,7 +109,7 @@ const AcknowledgeCard = ({ onBack }) => {
                 </Typography>
 
                 <Typography variant="body2" component="div">
-                    I was inspired to build this after seeing the winner of the 2024 MTA Open Data Challenge, Art Off the Rails by Stephanie Dang. Most of the design, functionality, and ideas were from Art Off the Rails. Highly recommend checking it out! I wanted to see something similar for the Bay Area, hence “Canvas Across the Bay”.
+                    I was inspired to build this after seeing the winner of the 2024 MTA Open Data Challenge, <a href='https://artworkmta.pages.dev/' target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>Art Off the Rails</a> by <a href='https://www.stephanie-dang.com/' target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>Stephanie Dang</a>. Most of the design, functionality, and ideas were from Art Off the Rails. Highly recommend checking it out! I wanted to see something similar for the Bay Area, hence “Canvas Across the Bay”.
                 </Typography>
 
                 <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
@@ -119,7 +123,7 @@ const AcknowledgeCard = ({ onBack }) => {
                 <div style={{ marginTop: '8px' }} />
 
                 <Typography variant="body2" component="div">
-                    Information on art located in the MUNI Central Subway were sourced from the SF Arts Commission’s article on the central subway.
+                    Information on art located in the MUNI Central Subway were sourced from the <a href='https://sfartscommission.org/experience-art/projects/central-subway-public-art-program' target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>SF Arts Commission’s article</a> on the central subway.
                 </Typography>
 
                 <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
@@ -149,7 +153,7 @@ const AcknowledgeCard = ({ onBack }) => {
                 </Typography>
 
                 <Typography variant="body2" component="div">
-                    Don’t see art from your local transit stop? Want me to take down your photo? Other inquires? Reach me at kevin1015wang@gmail.com! I’m all ears! 👋
+                    Don’t see art from your local transit stop? Want me to take down your photo? Other inquires? Reach me at <a href='mailto:kevin1015wang@gmail.com' target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>kevin1015wang@gmail.com</a>! I’m all ears! 👋
                 </Typography>
 
                 <Typography variant="h6" component="div" sx={{ fontWeight: 700, marginTop: '8px' }}>
@@ -157,7 +161,9 @@ const AcknowledgeCard = ({ onBack }) => {
                 </Typography>
 
                 <Typography variant="body2" component="div">
-                    Interested in adding in art, building a feature, or something else? Feel free to make a pull request in the project’s GitHub!
+                    Interested in adding in art, building a feature, or something else? Feel free to make a pull request in the project’s <a href='https://github.com/kevin1015wang/Canvas-Across-the-Bay' target="_blank" rel="noreferrer" style={{ color: isDarkMode ? 'white' : 'inherit' }}>
+                        GitHub
+                    </a>!
                 </Typography>
             </CardContent>
         </Card>

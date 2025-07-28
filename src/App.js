@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -23,6 +23,50 @@ const App = () => {
   const [selectedStation, setSelectedStation] = useState('All stations');
   const [selectedArt, setSelectedArt] = useState(null);
   const [acknowledgements, setAcknowlegements] = useState(false);
+
+  // URL parameter handling
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const stationParam = urlParams.get('station');
+    const artParam = urlParams.get('art');
+    
+    if (stationParam) {
+      setSelectedStation(stationParam);
+    }
+    
+    if (artParam) {
+      // Find the art piece by name
+      const allArtData = [...bartArtData, ...muniArtData];
+      const foundArt = allArtData.find(art => 
+        art.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === artParam.toLowerCase()
+      );
+      if (foundArt) {
+        setSelectedArt(foundArt);
+        setSelectedStation(foundArt.stationLocation);
+      }
+    }
+  }, []);
+
+  // Update URL when state changes
+  useEffect(() => {
+    const url = new URL(window.location);
+    
+    if (selectedStation && selectedStation !== 'All stations') {
+      url.searchParams.set('station', selectedStation);
+    } else {
+      url.searchParams.delete('station');
+    }
+    
+    if (selectedArt) {
+      const artSlug = selectedArt.name.toLowerCase().replace(/[^a-z0-9]/g, '-');
+      url.searchParams.set('art', artSlug);
+    } else {
+      url.searchParams.delete('art');
+    }
+    
+    // Update URL without page reload
+    window.history.replaceState({}, '', url.toString());
+  }, [selectedStation, selectedArt]);
 
   // Detect dark mode preference
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -52,6 +96,10 @@ const App = () => {
   const handleStationClick = (stationName) => {
     setSelectedStation(stationName);
     setSelectedArt(null);
+    // Clear art parameter when selecting a station
+    const url = new URL(window.location);
+    url.searchParams.delete('art');
+    window.history.replaceState({}, '', url.toString());
   };
 
   const handleArtClick = (art) => {
@@ -61,6 +109,10 @@ const App = () => {
   const handleBack = () => {
     setSelectedArt(null);
     setAcknowlegements(false);
+    // Clear URL parameters when going back
+    const url = new URL(window.location);
+    url.searchParams.delete('art');
+    window.history.replaceState({}, '', url.toString());
   };
 
   return (

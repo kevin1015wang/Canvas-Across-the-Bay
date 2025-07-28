@@ -83,7 +83,7 @@ const AcknowledgeCard = ({ onBack }) => {
                 <a href='https://www.sfmta.com/places/union-squaremarket-street-station' target="_blank" rel="noreferrer">
                     <img
                         src={`/bartArtPics/ackImageSF.jpg`}
-                        alt='Acknowledgement Image'
+                        alt='Acknowledgement'
                         style={{
                             objectFit: 'cover',
                             width: '100%',
